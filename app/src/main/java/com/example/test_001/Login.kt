@@ -3,8 +3,10 @@ package com.example.test_001
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Button
@@ -53,14 +55,14 @@ fun Login() {
 
         OutlinedTextField(value = email, onValueChange = {
             email = it
-        },label = {
+        }, label = {
             Text(text = "Email address")
         })
         Spacer(modifier = Modifier.height(10.dp))
 
         OutlinedTextField(value = pass, onValueChange = {
             pass = it
-        },label = {
+        }, label = {
             Text(text = "Password")
         }, visualTransformation = PasswordVisualTransformation())
         Spacer(modifier = Modifier.height(10.dp))
@@ -74,5 +76,20 @@ fun Login() {
         Text(text = "Forgot Password?", modifier = Modifier.clickable {
 
         })
+        Spacer(modifier = Modifier.height(40.dp))
+
+
+        Row(
+
+        ) {
+            Text(text = "Don't have an account?  ")
+
+            Text(
+                text = "Sign UP",
+                modifier = Modifier.clickable {
+
+                }
+                )
+        }
     }
 }
