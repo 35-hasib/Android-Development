@@ -12,12 +12,13 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.material3.TextField
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
@@ -26,6 +27,12 @@ import androidx.compose.ui.unit.sp
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun Login() {
+    var email by remember {
+        mutableStateOf("")
+    }
+    var pass by remember {
+        mutableStateOf("")
+    }
 
     Column(
         modifier = Modifier.fillMaxSize(),
@@ -44,14 +51,18 @@ fun Login() {
         )
         Spacer(modifier = Modifier.height(10.dp))
 
-        OutlinedTextField(value = "", onValueChange = {},label = {
+        OutlinedTextField(value = email, onValueChange = {
+            email = it
+        },label = {
             Text(text = "Email address")
         })
         Spacer(modifier = Modifier.height(10.dp))
 
-        OutlinedTextField(value = "", onValueChange = {},label = {
+        OutlinedTextField(value = pass, onValueChange = {
+            pass = it
+        },label = {
             Text(text = "Password")
-        })
+        }, visualTransformation = PasswordVisualTransformation())
         Spacer(modifier = Modifier.height(10.dp))
 
         Button(onClick = { /*TODO*/ }) {
