@@ -113,6 +113,7 @@ fun SignUp(){
 
             Text(
                 text = "Login",
+                color = Color.Blue,
                 modifier = Modifier.clickable {
 
                 }

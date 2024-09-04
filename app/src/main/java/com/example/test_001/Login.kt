@@ -42,7 +42,7 @@ fun Login() {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(
-            text = "Welcome To BudgetTracker",
+            text = "Welcome Back",
             fontSize = 30.sp,
             fontWeight = FontWeight.Bold
         )
@@ -85,7 +85,8 @@ fun Login() {
             Text(text = "Don't have an account?  ")
 
             Text(
-                text = "Sign UP",
+                text = "Sign up",
+                color = Color.Blue,
                 modifier = Modifier.clickable {
 
                 }
