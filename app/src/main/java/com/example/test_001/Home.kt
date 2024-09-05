@@ -37,6 +37,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.PasswordVisualTransformation
@@ -61,7 +62,10 @@ fun Home() {
             )
         },
         floatingActionButton = {
-            FloatingActionButton(onClick = { /* Add new transaction */ }) {
+            FloatingActionButton(
+                onClick = { /* Add new transaction */ },
+                containerColor = Color.LightGray
+                ) {
                 Icon(Icons.Default.Add, contentDescription = "Add")
             }
         }
@@ -164,20 +168,27 @@ fun Home() {
 }
 @Composable
 fun TransactionListItem(title: String, category: String, amount: String){
-    Row(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(vertical = 8.dp),
-        verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.SpaceBetween
+    Card(
+        modifier = Modifier.fillMaxWidth(),
+        colors = CardDefaults.cardColors(
+            containerColor = Color.Gray
+        )
     ) {
-        Column(
-
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(vertical = 12.dp),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.SpaceBetween
         ) {
-            Text(title, style = MaterialTheme.typography.bodyLarge)
-            Text(category, style = MaterialTheme.typography.bodySmall, color = Color.Gray)
+            Column(
+
+            ) {
+                Text(title, style = MaterialTheme.typography.bodyLarge,color = Color.White)
+                Text(category, style = MaterialTheme.typography.bodySmall, color = Color.White)
+            }
+            Text(amount, style = MaterialTheme.typography.bodyLarge,color = Color.White)
         }
-        Text(amount, style = MaterialTheme.typography.bodyLarge)
     }
 }
 
