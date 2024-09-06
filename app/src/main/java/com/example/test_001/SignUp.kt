@@ -101,7 +101,7 @@ fun SignUp(){
         },visualTransformation = PasswordVisualTransformation())
         Spacer(modifier = Modifier.height(10.dp))
 
-        Button(onClick = { /*TODO*/ }, modifier = Modifier.fillMaxWidth()) {
+        Button(onClick = { /*TODO*/ }) {
             Text(text = "Sign Up")
         }
         Spacer(modifier = Modifier.height(40.dp))

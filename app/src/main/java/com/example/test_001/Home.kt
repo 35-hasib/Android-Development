@@ -64,7 +64,7 @@ fun Home() {
         floatingActionButton = {
             FloatingActionButton(
                 onClick = { /* Add new transaction */ },
-                containerColor = Color.LightGray
+                containerColor = Color.Gray
                 ) {
                 Icon(Icons.Default.Add, contentDescription = "Add")
             }
