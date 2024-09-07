@@ -29,13 +29,14 @@ import androidx.navigation.NavController
 
 
 @Composable
-fun Login(navController: NavController) {
+fun Login(navController: NavController,authViewModel: AuthView) {
     var email by remember {
         mutableStateOf("")
     }
     var pass by remember {
         mutableStateOf("")
     }
+
 
     Column(
         modifier = Modifier.fillMaxSize(),

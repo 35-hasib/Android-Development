@@ -29,7 +29,7 @@ import androidx.navigation.NavController
 
 
 @Composable
-fun SignUp(navController: NavController){
+fun SignUp(navController: NavController,authViewModel: AuthView){
 
     var fname by remember {
         mutableStateOf("")
