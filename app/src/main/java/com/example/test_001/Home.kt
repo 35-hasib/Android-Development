@@ -97,7 +97,7 @@ fun Home() {
                         Text(text = "  $50000",fontSize = 20.sp)
                     }
                     Text(
-                        text = "   ...   ",fontSize = 30.sp,
+                        text = " ... ",fontSize = 30.sp,
                         fontWeight = FontWeight.Bold,
                         modifier = Modifier.clickable {
 
@@ -190,6 +190,7 @@ fun TransactionListItem(title: String, category: String, amount: String){
             Text(amount, style = MaterialTheme.typography.bodyLarge,color = Color.White)
         }
     }
+    Spacer(modifier = Modifier.height(15.dp))
 }
 
 
