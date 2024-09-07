@@ -25,10 +25,11 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 
-@Preview(showBackground = true, showSystemUi = true)
+
 @Composable
-fun Login() {
+fun Login(navController: NavController) {
     var email by remember {
         mutableStateOf("")
     }
@@ -88,7 +89,7 @@ fun Login() {
                 text = "Sign up",
                 color = Color.Blue,
                 modifier = Modifier.clickable {
-
+                    navController.navigate("signup")
                 }
                 )
         }

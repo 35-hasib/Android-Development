@@ -15,10 +15,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 
-@Preview(showBackground = true, showSystemUi = true)
+
 @Composable
-fun GetStarted(){
+fun GetStarted(navController: NavController){
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
@@ -35,15 +36,19 @@ fun GetStarted(){
         )
         Spacer(modifier = Modifier.height(10.dp))
 
-        Button(onClick = { /*TODO*/ }) {
+        Button(onClick = {
+            navController.navigate("signup")
+        }) {
             Text(text = "Sign up")
         }
         Spacer(modifier = Modifier.height(5.dp))
 
-        Button(onClick = { /*TODO*/ }) {
+        Button(onClick = {
+            navController.navigate("login")
+        }) {
             Text(text = "Login ")
         }
-        Spacer(modifier = Modifier.height(20.dp))
+
 
     }
 
